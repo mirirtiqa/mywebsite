@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import NavBar from "@/components/NavBar";
+import MainBackground from "@/components/MainBackground";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,10 +22,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+
+     
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+      
+         <div
+  className="h-screen w-screen bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: "url('/starryNight.jpg')" }}
+        >
+        <NavBar/>
         {children}
+      
+        </div>
+      
       </body>
     </html>
   );
